@@ -14,41 +14,41 @@ pipeline {
     parameters {
         string(
             name: 'S3_BUCKET',
-            defaultValue: 'cdec-alpha-cbzpb-dev-frontend', 
+            defaultValue: 'cdec-alpha-techrujal2-dev-frontend', 
             description: 'S3 bucket name for the frontend (e.g. cdec-frontend-dev-frontend)'
         )
         string(
             name: 'CLOUDFRONT_DISTRIBUTION_ID',
-            defaultValue: 'E3QOZ8B1IDKTCV',
+            defaultValue: 'E1AF6TA9UTBUXG',
             description: 'CloudFront distribution ID (e.g. E1234567890ABC)'
         )
         string(
             name: 'VITE_AUTH_API',
-            defaultValue: 'https://api.infra-software-architect.online/api/auth',
+            defaultValue: 'https://api.techrujal.xyz/api/auth',
             description: 'Auth API URL baked into the build'
         )
         string(
             name: 'VITE_COURSE_API',
-            defaultValue: 'https://api.infra-software-architect.online/api/courses',
+            defaultValue: 'https://techrujal.xyz/api/courses',
             description: 'Course API URL baked into the build'
         )
         string(
             name: 'VITE_ENROLL_API',
-            defaultValue: 'https://api.infra-software-architect.online/api/enroll',
+            defaultValue: 'https://techrujal.xyz/api/enroll',
             description: 'Enrollment API URL baked into the build'
         )
     }
 
     environment {
         APP_DIR = 'application/frontend'
-        AWS_DEFAULT_REGION = 'eu-west-1'
+        AWS_DEFAULT_REGION = 'ap-southeast-2'
     }
 
     stages {
 
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/AnupDudhe/cdec-alpha-app.git', branch: 'main'
+                git url: 'https://github.com/rujyaa2102/cdec-alpha-app.git', branch: 'main'
             }
         }
 
